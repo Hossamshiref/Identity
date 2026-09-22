@@ -1,49 +1,300 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hossam Sheref | Code Guardian</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hossam Shiref | COVRA</title>
+  
+  <!-- Clean Modern Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Profile Header */
+    .profile-header {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 28px 20px 22px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Clean Avatar without weird white edges */
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 16px auto;
+      overflow: hidden;
+      border: 3px solid #0284c7;
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.18);
+      background-color: #e2e8f0;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .event-badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .profile-header h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .profile-header .title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 8px;
+    }
+
+    .profile-header .bio {
+      font-size: 13.5px;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* COVRA Project Card */
+    .project-card {
+      background: #ffffff;
+      border: 1.5px solid #0284c7;
+      border-radius: 16px;
+      padding: 18px 20px;
+      text-align: left;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.08);
+    }
+
+    .project-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .project-card p {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .project-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #0284c7;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 16px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .project-btn:hover {
+      background: #0369a1;
+    }
+
+    /* Links List */
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      color: #0f172a;
+      text-decoration: none;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 14.5px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      transition: all 0.2s ease;
+    }
+
+    .link-btn:hover {
+      transform: translateY(-2px);
+      border-color: #0284c7;
+      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.12);
+    }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .link-left i {
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .fa-linkedin { color: #0a66c2; }
+    .fa-whatsapp { color: #25d366; }
+    .fa-instagram { color: #e1306c; }
+    .fa-shield-halved { color: #0284c7; }
+
+    .link-btn .arrow {
+      font-size: 12px;
+      color: #94a3b8;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .link-btn:hover .arrow {
+      color: #0284c7;
+      transform: translateX(3px);
+    }
+
+    /* Footer */
+    .footer {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 6px;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="profile-header">
-            <div class="avatar">
-                <img src="My Photo.jpeg" alt="Hossam Shiref">
-            </div>
-            <h1>Hossam Shiref</h1>
-            <p>Code Guardian Founder | C++ & Web Developer | Cybersecurity Enthusiast</p>
-        </div>
+  <div class="container">
+    
+    <!-- Profile Card -->
+    <div class="profile-header">
+      
+      <!-- Avatar مضبوط تماماً كدائرة صافية بدون حواف بيضاء -->
+      <div class="avatar">
+        <img src="My Photo.jpeg" alt="Hossam Shiref">
+      </div>
 
-        <!-- Links List -->
-        <div class="links-list">
-            <a href="https://wa.me/+201029465591" target="_blank" class="link-btn whatsapp">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp
-            </a>
-            
-            <a href="https://instagram.com/hossam_shiref88267" target="_blank" class="link-btn instagram">
-                <i class="fa-brands fa-instagram"></i> Instagram
-            </a>
+      <div class="event-badge">
+        Speaker @ DevOps Day Cairo (Track 3)
+      </div>
 
-            <a href="https://www.linkedin.com/in/hossam-shiref-2b47a2416?" target="_blank" class="link-btn linkedin">
-                <i class="fa-brands fa-linkedin"></i> LinkedIn
-            </a>
-
-            <a href="https://github.com/Hossamshiref" target="_blank" class="link-btn github">
-                <i class="fa-brands fa-github"></i> GitHub
-            </a>
-        </div>
-
-        <footer class="footer">
-            <p>&copy; 2026 Code Guardian. All Rights Reserved.</p>
-        </footer>
+      <h1>Hossam Shiref</h1>
+      <div class="title">COVRA Founder</div>
+      
+      <!-- كلامك الحقيقي البسيط بدون فلسفة -->
+      <p class="bio">
+        C++ &amp; Web Developer • Cybersecurity &amp; AI Enthusiast
+      </p>
     </div>
+
+    <!-- كارت COVRA -->
+    <div class="project-card">
+      <div class="project-card-header">
+        <span>🛡️</span>
+        <span>COVRA — Code Guardian</span>
+      </div>
+      <p>
+        AI-powered security scanner for VS Code. Detects vulnerabilities locally with privacy-first analysis and scans extensions before installation.
+      </p>
+      <a href="https://wa.me/+201029465591?text=Hi%20Hossam,%20I%20am%20interested%20in%20COVRA!" target="_blank" class="project-btn">
+        <span>Connect for Early Beta</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <!-- الروابط الأربعة النظيفة -->
+    <div class="links-list">
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/hossam-shiref-2b47a2416" target="_blank" class="link-btn">
+        <div class="link-left">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </div>
+        <i class="fa-solid fa-chevron-right arrow"></i>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/+201029465591" target="_blank" class="link-btn">
+        <div class="link-left">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </div>
+        <i class="fa-solid fa-chevron-right arrow"></i>
+      </a>
+
+      <!-- COVRA Instagram -->
+      <a href="https://instagram.com/covra_security" target="_blank" class="link-btn">
+        <div class="link-left">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>COVRA Instagram</span>
+        </div>
+        <i class="fa-solid fa-chevron-right arrow"></i>
+      </a>
+
+      <!-- Personal Instagram -->
+      <a href="https://instagram.com/hossam_shiref88267" target="_blank" class="link-btn">
+        <div class="link-left">
+          <i class="fa-brands fa-instagram"></i>
+          <span>Hossam Shiref Instagram</span>
+        </div>
+        <i class="fa-solid fa-chevron-right arrow"></i>
+      </a>
+
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Hossam Shiref • Code Guardian</p>
+    </footer>
+
+  </div>
 
 </body>
 </html>
